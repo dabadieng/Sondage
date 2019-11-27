@@ -1,0 +1,19 @@
+Application de sondage :
+------------------------
+On souhaite concevoir un système d'information permettant de gérer des sondages et les réponses aux sondages.
+
+Un sondage est caractérisé par : un identifiant, un titre et une période de validité durant laquelle 
+les visiteurs sont autorisés à répondre aux questions.
+Un sondage se compose d'un ensemble de questions.
+Une question est composé d'un identifiant et d'un texte.
+Pour chaque question est définie un ensemble de réponses possibles.
+Une réponse est composé d'un identifiant et d'un texte.
+On souhaite que les sondages soient anonymes, les visiteurs pouront donc répondre sans inscription préalable.
+Néanmoins on souhaite limiter autant que possible qu'une même personne réponde plusieurs fois à un sondage.
+Pour cela on utilisera l'adresse IP du répondant comme identifiant et on veillera à ce qu'une même adresse IP ne puisse être associée qu'une seule fois à une question.
+
+1. Trouver un MCD puis un MLD
+2. Créer le script de création de la base.
+3. Créer un jeu de données
+4. Créer les requêtes qui fournissent le résultat d'un sondage à savoir :
+- pour un sondage donné, pour une question données, pour chaque réponse possible combien de visiteurs l'ont choisie.

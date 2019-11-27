@@ -1,0 +1,66 @@
+﻿<MCD>
+   <entité>
+      sondage
+      - id
+      - titre
+      - date_debut
+      - date_fin
+
+      question 
+      - id
+      - texte
+
+      reponse_possible
+      - id
+      - texte
+
+      visiteur
+      - adresseip
+   </entité>
+
+   <association>
+      comporter 
+      - sondage (1,N)
+      - question(1,1)  
+            
+      proposer
+      - reponse_possible(1,1)
+      - question(1,N)
+      
+      choisir (question)
+      - visiteur(1,N)
+      - reponse_possible(1,N)
+
+   </association>
+</MCD>
+<MLD>
+      sondage
+      - son_id
+      - son_titre
+      - son_date_debut
+      - son_date_fin
+
+      question 
+      - que_id
+      - que_texte
+      - que_sondage (fk)
+
+      reponse_possible
+      - rep_id
+      - rep_texte
+      - rep_question (fk)
+
+      visiteur
+      - vis_adresseip
+
+      choix
+      - cho_id (pk)
+      - cho_adresseip (fk)
+      - cho_reponse (fk)
+      - cho_question (fk)
+      unique key (cho_adresseip,cho_question)
+</MLD>
+
+
+sondage <=> question <=> reponse_possible <=> choix <=> visiteur
+question <=> choix
